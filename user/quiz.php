@@ -19,22 +19,14 @@
         include_once '../Questions.php';
             // if(isset($_POST['topic'])){
                 $topic = $_POST['topic'];
-       
-            // $inc = isset($_POST['inc'])?(int)$_POST['inc']:1;
-            // $inc = isset($_POST['prev'])?(int)$_POST['prev']:1;
             
         
         $qn = new Questions();
         $ar = $qn->fetchQn($topic);
-        echo "<pre>";   
-        // print_r($ar);
-        echo "</pre>";
-        // $count = 0;
         $i = 1;
         $rows = count($ar);
         
         foreach($ar as $data){
-            // echo $i;
             if ($i==1) {
                 ?>
                 <form action="result.php" method="POST">
@@ -129,7 +121,9 @@
      });
     });
 
-    var count = 15;
+
+// Time Counter Count Down
+    var count = 60;
     var interval = setInterval(function(){
     document.getElementById('count').innerHTML=count;
     count--;

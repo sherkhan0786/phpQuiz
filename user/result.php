@@ -1,7 +1,5 @@
 <?php
-
-// include_once '../Questions.php';
-
+// Connection
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,24 +12,17 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// $topic = $_GET['id'];
-
-// echo "<pre>";
-// print_r($ar);
-
-// die();
+// Creating array to get data to show results
 $user_answer = array();
 $right_answer = array();
 $true = array();
 $false = array();
 $incomplete = array();
 
+// On Submit Quiz
 if (isset($_POST['finish'])) {
     $topic = $_POST['id'];
-    // $data = new Questions();
-    // $ar = $data->fetchQn($topic);
     $opt = $_POST;
-    // $id = $_GET['id'];
     $qry = 'SELECT * FROM Questions WHERE topic = "'.$topic.'"';
     $run = mysqli_query($conn, $qry);
     $rows = mysqli_num_rows($run);
@@ -40,8 +31,6 @@ if (isset($_POST['finish'])) {
             for ($i=1; $i<=$rows; $i++) {
                 if ($_POST['ques'.$i] == $data1['id']) {
                     array_push($user_answer, $_POST[$i]);
-                    // print_r($user_answer);
-                    // print_r($user_answer);
                 }
             }
             array_push($right_answer, $data1['answer']);
@@ -86,10 +75,7 @@ include('userHeader.php');
         <p><strong><?php echo sizeof($false); ?></strong></p>
         <h2>Not Attempted </h2>
         <p><strong><?php echo sizeof($incomplete); ?></strong></p>
-    
-
-
-    </div>
+        </div>
     </div>
   </div>
 </div>
