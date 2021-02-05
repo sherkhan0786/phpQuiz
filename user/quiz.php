@@ -4,7 +4,7 @@
 </style>
 <?php include_once 'userHeader.php' ?>
 
-<div class="col-md-6 mx-auto my-5 text-light bg-dark bg-gradient p-5">
+<div class="col-md-6 mx-auto my-5 bg-light bg-gradient p-5">
     <div class="card my-5 text-center bg-info">
         <div class="card-body .display">
         Your Time Left: 

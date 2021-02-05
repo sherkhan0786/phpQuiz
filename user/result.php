@@ -65,7 +65,7 @@ include('userHeader.php');
 
 <div class="row row-cols-1 row-cols-md-2 mx-auto">
   <div class="col mx-auto mt-5">
-    <div class="card  bg-dark text-white text-center">
+    <div class="card  bg-light text-center">
     <div class="card my-5 text-center bg-danger">
         <div class="card-body">
             RESULT
