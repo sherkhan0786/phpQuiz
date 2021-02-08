@@ -22,10 +22,17 @@
             
         
         $qn = new Questions();
-        $ar = $qn->fetchQn($topic);
+        $ar = ($qn->fetchQn($topic));
+        // $count = count($ar);
+        // echo $count;
+        shuffle($ar);
         $i = 1;
         $rows = count($ar);
         
+        if($rows<10){
+            echo "<script>alert('Under Maintainance, PLEASE choose another option')</script>";
+            echo "<script>window.location.href = 'index.php';</script>";
+        }else{
         foreach($ar as $data){
             if ($i==1) {
                 ?>
@@ -94,7 +101,7 @@
                 <?php $i++;
             }
         }
-        
+        }
         ?>
         </form>
     

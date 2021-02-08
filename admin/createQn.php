@@ -9,7 +9,7 @@
         $optFour = $_POST['optFour'];
         $answer = $_POST['answer'];
 
-        $login = new Questions();
+$login = new Questions();
         $login->insert($topic, $question, $optOne, $optTwo, $optThree, $optFour, $answer);
         echo "<script>window.location.href = 'adminDash.php';</script>";
     }

@@ -26,7 +26,7 @@
 
         public function fetchQn($topic){
             $data = null;
-            $query = "SELECT * FROM Questions WHERE topic='$topic' ";
+            $query = "SELECT * FROM Questions WHERE topic='$topic' LIMIT 10";
             if($sql = $this->conn->query($query)){
                 while($row = mysqli_fetch_assoc($sql)){
                     $data[] = $row;
@@ -36,3 +36,7 @@
         }
     }
 ?>
+
+
+
+<!-- ORDER BY rand() limit 1, 8 -->

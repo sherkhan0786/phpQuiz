@@ -1,6 +1,7 @@
 <?php
     include_once 'userHeader.php';
     include_once '../Category.php';
+    include_once '../Questions.php';
         
         $fetch = new Category();
         $ar = $fetch->fetchCat();
@@ -13,6 +14,7 @@
         <h5 class="card-title">TAKE A QUIZ TEST</h5>
         <?php
             foreach($ar as $key=>$val){
+              
         ?>
         <form method="post" action="quiz.php?topic=<?= $val['topic'] ?>">
         <?php
@@ -22,10 +24,14 @@
             <select class="form-select mb-3" name="topic">
                 <option selected disabled>Choose Topic</option>
                 <?php
+                      if($count < 10){
+                        // echo count($ar);
                     foreach($ar as $key=>$val){
+                        // print_r($val);
                 ?>
                         <option value="<?php echo $val['topic']; ?>"><?php echo $val['topic']; ?></option>
                 <?php
+                      }
                     }
                 ?>
             </select>
@@ -39,8 +45,6 @@
     </div>
   </div>
 </div>
-
-
 <script>
     
 </script>

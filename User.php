@@ -27,7 +27,6 @@
         public function login($email, $password){
             $sql = "SELECT * FROM signup WHERE email = '$email' AND password = '$password' ";
             $result = $this->conn->query($sql);
-            // $rows = mysqli_num_rows($result);
             $arr = mysqli_fetch_assoc($result);
             return $arr;
         }

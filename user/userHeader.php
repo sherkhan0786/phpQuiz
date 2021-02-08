@@ -31,8 +31,8 @@ echo $_SESSION['user'];
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-        <a class="nav-link" href="#">Add Question</a>
-        <a class="nav-link" href="#">Add Topic</a>
+        <a class="nav-link" href="#">About us</a>
+        <a class="nav-link" href="#">Contact US</a>
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         <a class="nav-link text-danger" href="../index.php">LogOut</a>
       </div>

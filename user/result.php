@@ -23,7 +23,7 @@ $incomplete = array();
 if (isset($_POST['finish'])) {
     $topic = $_POST['id'];
     $opt = $_POST;
-    $qry = 'SELECT * FROM Questions WHERE topic = "'.$topic.'"';
+    $qry = "SELECT * FROM Questions WHERE topic = '$topic' LIMIT 10";
     $run = mysqli_query($conn, $qry);
     $rows = mysqli_num_rows($run);
     if ($rows>0) {
